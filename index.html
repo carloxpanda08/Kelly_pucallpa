@@ -11,12 +11,16 @@
             color: white;
             margin: 0;
             padding: 0;
-            text-align: center;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
+        }
+
+        .main-container {
+            text-align: center;
+            max-width: 30%;
+            margin: 0 auto;
         }
 
         .welcome-container {
@@ -51,7 +55,8 @@
         }
 
         .shop-btn {
-            margin-top: 20px;
+            display: inline-block;
+            margin: 20px auto;
             background-color: #ff4081; /* Rosa vivo */
             color: white;
             padding: 10px 20px;
@@ -69,11 +74,11 @@
         }
 
         .image-container {
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .image-container img {
-            max-width: 80%;
+            max-width: 100%;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -81,17 +86,18 @@
     </style>
 </head>
 <body>
-    
-    <div class="welcome-container">
-        <h1>BIENVENIDO A IMPORTACIONES KELLY DE PUCALLPA</h1>
-        <p>¡Explora nuestros productos y ofertas exclusivas!</p>
-        <span class="beta">VERSIÓN BETA</span>
-        <a href="tienda.html" class="shop-btn">VER TIENDA</a>
-    </div>
+    <div class="main-container">
+        <div class="welcome-container">
+            <h1>BIENVENIDO A IMPORTACIONES KELLY DE PUCALLPA</h1>
+            <p>¡Explora nuestros productos y ofertas exclusivas!</p>
+            <span class="beta">VERSIÓN BETA</span>
+            <a href="tienda.html" class="shop-btn">VER TIENDA</a>
+        </div>
 
-    <!-- Imagen centrada -->
-    <div class="image-container">
-        <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/416284410_356146760497417_5500340257099835476_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHIp7FXXS5b4rcRESPv0uHmRHdYBGThEPJEd1gEZOEQ8q3WVF3-D3AhTKWXomNYBigjiRYJFBrRzy1yF96M88Qq&_nc_ohc=w6RFAmT7X5oQ7kNvgF7YaxL&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=AQhSnFTmeqsfKQqRnLAVnWT&oh=00_AYDP3i151jzPqQog8L0T1ShhVETaqXSX_eDRLlfpCC2-8w&oe=674522C3" alt="Imagen de bienvenida">
+        <!-- Imagen debajo del botón -->
+        <div class="image-container">
+            <img src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/416284410_356146760497417_5500340257099835476_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHIp7FXXS5b4rcRESPv0uHmRHdYBGThEPJEd1gEZOEQ8q3WVF3-D3AhTKWXomNYBigjiRYJFBrRzy1yF96M88Qq&_nc_ohc=w6RFAmT7X5oQ7kNvgF7YaxL&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=AQhSnFTmeqsfKQqRnLAVnWT&oh=00_AYDP3i151jzPqQog8L0T1ShhVETaqXSX_eDRLlfpCC2-8w&oe=674522C3" alt="Imagen de bienvenida">
+        </div>
     </div>
 </body>
 </html>
