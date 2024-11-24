@@ -1,0 +1,137 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0b0ff; /* Lila */
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffb6c1; /* Rosa pastel */
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8bbd0; /* Rosado */
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+
+        .cart-item img {
+            max-width: 60px;
+            height: auto;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .btn {
+            background-color: #ffb6c1; /* Rosa pastel */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #f06292; /* Rosa fuerte */
+        }
+
+        .remove-btn {
+            background-color: #ff5722; /* Naranja fuerte */
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .remove-btn:hover {
+            background-color: #e64a19; /* Naranja más oscuro */
+        }
+
+        .total {
+            font-size: 20px;
+            text-align: right;
+            margin-top: 20px;
+            color: #ffb6c1; /* Rosa pastel */
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .buttons a {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Carrito</h1>
+        <div id="cart-items">
+            <!-- Los productos se mostrarán aquí -->
+        </div>
+        <div class="total" id="total"></div>
+
+        <div class="buttons">
+            <a href="tienda.html" class="btn">Seguir Comprando</a>
+            <a href="compra.html" class="btn">Comprar</a>
+        </div>
+    </div>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let total = 0;
+
+        const cartItemsContainer = document.getElementById("cart-items");
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = "<p>El carrito está vacío.</p>";
+        } else {
+            cart.forEach((item, index) => {
+                const cartItem = document.createElement("div");
+                cartItem.className = "cart-item";
+                cartItem.innerHTML = `
+                    <div style="display: flex; align-items: center;">
+                        <img src="${item.imagen}" alt="${item.nombre}">
+                        <span>${item.nombre} - S/ ${item.precio}</span>
+                    </div>
+                    <button class="remove-btn" onclick="removeFromCart(${index})">Eliminar</button>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+                total += item.precio;
+            });
+        }
+
+        document.getElementById("total").innerText = `Total: S/ ${total.toFixed(2)}`;
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            location.reload();
+        }
+    </script>
+</body>
+</html>

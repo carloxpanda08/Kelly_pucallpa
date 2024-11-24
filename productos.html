@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMPORTACIONES KELLY DE PUCALLPA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3e5f5; /* Lila suave */
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff80ab; /* Rosa pastel */
+        }
+
+        .product-details {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f8bbd0; /* Rosado claro */
+            border-radius: 10px;
+        }
+
+        .product-details img {
+            max-width: 50%;
+            border-radius: 10px;
+        }
+
+        .product-info {
+            width: 45%;
+        }
+
+        .quantity-container {
+            margin-top: 15px;
+        }
+
+        .btn {
+            background-color: #ff80ab; /* Rosa pastel */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #ec407a; /* Rosa fuerte */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>IMPORTACIONES KELLY DE PUCALLPA</h1>
+        
+        <div class="product-details">
+            <img src="producto1.jpg" alt="Producto 1">
+            <div class="product-info">
+                <h2>Nombre del Producto</h2>
+                <p>Descripción del producto...</p>
+                <p><strong>Precio: S/ 25.00</strong></p>
+                
+                <!-- Campo de cantidad -->
+                <div class="quantity-container">
+                    <label for="quantity">Cantidad:</label>
+                    <input type="number" id="quantity" value="1" min="1">
+                </div>
+                
+                <button class="btn" id="add-to-cart-btn">Añadir al Carrito</button>
+                <a href="tienda.html" class="btn" style="margin-top: 10px;">Ver más productos</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const product = {
+            nombre: "Producto 1",
+            precio: 25,
+            imagen: "producto1.jpg"
+        };
+
+        document.getElementById("add-to-cart-btn").onclick = function() {
+            const quantity = document.getElementById("quantity").value;
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            
+            // Verificar si el producto ya está en el carrito
+            const productInCart = cart.find(item => item.nombre === product.nombre);
+
+            if (productInCart) {
+                // Si el producto ya está en el carrito, actualizar la cantidad
+                productInCart.cantidad += parseInt(quantity);
+            } else {
+                // Si no está en el carrito, agregarlo con la cantidad seleccionada
+                cart.push({ ...product, cantidad: parseInt(quantity) });
+            }
+
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`${product.nombre} añadido al carrito con ${quantity} unidad(es).`);
+        };
+    </script>
+</body>
+</html>
