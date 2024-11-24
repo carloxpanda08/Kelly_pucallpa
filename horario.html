@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario de Atención</title>
+    <style>
+        /* Estilos generales y paleta de colores */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff; /* Blanco */
+            color: #4a148c; /* Lila fuerte */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Barra de navegación */
+        nav {
+            background-color: #ff80ab; /* Rosa pastel */
+            color: white;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+            font-size: 1em;
+        }
+
+        nav ul li a:hover {
+            color: #4a148c; /* Lila fuerte */
+        }
+
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Calendario con horarios */
+        .calendario {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff; /* Blanco */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            margin: 20px auto;
+        }
+
+        .calendario h2 {
+            font-size: 1.8em;
+            color: #ff80ab; /* Rosa pastel */
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            font-size: 1em;
+        }
+
+        th {
+            background-color: #4a148c; /* Lila fuerte */
+            color: white;
+            font-weight: bold;
+        }
+
+        td {
+            color: #4a148c; /* Lila fuerte */
+        }
+
+        td.domingo {
+            font-weight: bold;
+            color: #ff80ab; /* Rosa pastel */
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            nav ul li a {
+                font-size: 0.9em; /* Reducir tamaño de texto */
+            }
+
+            .calendario {
+                max-width: 90%;
+                padding: 15px;
+            }
+
+            .calendario h2 {
+                font-size: 1.5em; /* Ajustar tamaño del título */
+            }
+
+            th, td {
+                font-size: 0.9em; /* Ajustar tamaño de las celdas */
+                padding: 8px; /* Reducir el padding */
+            }
+
+            td {
+                font-size: 0.9em; /* Ajustar tamaño de las celdas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul li a {
+                font-size: 0.8em; /* Aumentar el ajuste de texto */
+            }
+
+            .calendario {
+                max-width: 100%;
+                padding: 10px;
+            }
+
+            .calendario h2 {
+                font-size: 1.3em; /* Reducir tamaño del título en pantallas más pequeñas */
+            }
+
+            th, td {
+                font-size: 0.8em; /* Reducir aún más el tamaño de las celdas */
+                padding: 6px; /* Aumentar reducción de padding */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <div class="menu-container">
+            <div class="logo">Importaciones Kelly</div>
+            <ul>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="horario.html">Horarios</a></li>
+                <li><a href="lugar.html">Lugar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Calendario con horarios -->
+    <div class="calendario">
+        <h2>Horas de Atención</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                    <th>Sábado</th>
+                    <th>Domingo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>8:00 AM - 6:00 PM</td>
+                    <td>8:00 AM - 6:00 PM</td>
+                    <td>8:00 AM - 6:00 PM</td>
+                    <td>8:00 AM - 6:00 PM</td>
+                    <td>8:00 AM - 6:00 PM</td>
+                    <td>8:00 AM - 6:00 PM</td>
+                    <td class="domingo">9:00 AM - 2:00 PM</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personas en el Negocio</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff; /* Blanco */
+            color: #4a148c; /* Lila fuerte */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Barra de navegación */
+        nav {
+            background-color: #ff80ab; /* Rosa pastel */
+            color: white;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+            font-size: 1.1em;
+        }
+
+        nav ul li a:hover {
+            color: #4a148c; /* Lila fuerte */
+        }
+
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Estilo del título */
+        h1 {
+            text-align: center;
+            color: #ff80ab; /* Rosa pastel */
+            margin-top: 20px;
+        }
+
+        /* Contenedor de los cuadros */
+        .personas-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Estilo de cada cuadro */
+        .persona {
+            background-color: #f8bbd0; /* Rosado claro */
+            border-radius: 10px;
+            padding: 15px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Efecto hover para los cuadros */
+        .persona:hover {
+            transform: scale(1.05);
+        }
+
+        .persona img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .persona h3 {
+            color: #4a148c; /* Lila fuerte */
+            font-size: 1.2em;
+        }
+
+        .persona p {
+            color: #ff80ab; /* Rosa pastel */
+            font-size: 1em;
+            margin: 5px 0;
+        }
+
+        /* Hacer que los cuadros sean responsivos */
+        @media (max-width: 768px) {
+            .persona {
+                width: 200px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+            }
+
+            nav ul li a {
+                font-size: 1em; /* Reducir el tamaño de los enlaces */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .persona {
+                width: 150px;
+            }
+
+            nav ul li a {
+                font-size: 0.9em; /* Ajuste para pantallas muy pequeñas */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <div class="menu-container">
+            <div class="logo">Importaciones Kelly</div>
+            <ul>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="horario.html">Horarios</a></li>
+                <li><a href="lugar.html">Lugar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Título -->
+    <h1>Personas en el Negocio</h1>
+
+    <!-- Contenedor de los cuadros de personas -->
+    <div class="personas-container">
+        <!-- Persona 1 -->
+        <div class="persona">
+            <img src="persona1.jpg" alt="Persona 1">
+            <h3>Juan Pérez</h3>
+            <p>Edad: 28</p>
+            <p>Celular: 123-456-7890</p>
+        </div>
+
+        <!-- Persona 2 -->
+        <div class="persona">
+            <img src="persona2.jpg" alt="Persona 2">
+            <h3>Maria Gómez</h3>
+            <p>Edad: 35</p>
+            <p>Celular: 987-654-3210</p>
+        </div>
+
+        <!-- Persona 3 -->
+        <div class="persona">
+            <img src="persona3.jpg" alt="Persona 3">
+            <h3>Carlos Martínez</h3>
+            <p>Edad: 40</p>
+            <p>Celular: 555-123-4567</p>
+        </div>
+
+        <!-- Persona 4 -->
+        <div class="persona">
+            <img src="persona4.jpg" alt="Persona 4">
+            <h3>Ana Rodríguez</h3>
+            <p>Edad: 30</p>
+            <p>Celular: 444-555-6666</p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación de Kellydepucallpa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3e5f5; /* Lila suave */
+            text-align: center;
+            padding: 20px;
+            color: black; /* Letras en color negro */
+        }
+
+        h1 {
+            color: #4a148c; /* Color lila fuerte para el título */
+        }
+
+        .btn {
+            background-color: #ff80ab; /* Rosa pastel */
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #ec407a; /* Rosa fuerte */
+        }
+
+        /* Tabla */
+        table {
+            width: 100%;
+            max-width: 600px; /* Limita el tamaño máximo de la tabla */
+            margin: 30px auto;
+            border-collapse: collapse;
+            background-color: #fff; /* Fondo blanco para la tabla */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ff80ab; /* Rosa pastel */
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* Fila con fondo gris claro */
+        }
+
+        tr:hover {
+            background-color: #f1f1f1; /* Efecto al pasar el mouse */
+        }
+
+        /* Estilo de la barra de navegación */
+        nav {
+            background-color: #ff80ab; /* Rosa pastel */
+            color: white;
+            padding: 10px 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #4a148c; /* Lila fuerte */
+        }
+
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Responsividad para dispositivos móviles */
+        @media (max-width: 768px) {
+            table {
+                width: 90%;
+                font-size: 0.9em; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+            }
+
+            th, td {
+                padding: 8px;
+            }
+
+            .btn {
+                width: 80%; /* Hace el botón más grande en pantallas pequeñas */
+                font-size: 1.1em;
+            }
+
+            h1 {
+                font-size: 1.5em; /* Ajusta el tamaño del título en pantallas pequeñas */
+            }
+
+            nav ul {
+                flex-direction: column; /* Cambia la barra de navegación a una columna en pantallas pequeñas */
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <div class="menu-container">
+            <div class="logo">Importaciones Kelly</div>
+            <ul>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="horario.html">Horarios</a></li>
+                <li><a href="lugar.html">Lugar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Título -->
+    <h1>Visita nuestra ubicación en Google Maps</h1>
+
+    <!-- Tabla con la ubicación -->
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Dirección</th>
+        </tr>
+        <tr>
+            <td>Kellydepucallpa</td>
+            <td>Pucallpa, Ucayali, Perú</td>
+        </tr>
+    </table>
+
+    <!-- Botón para redirigir a Google Maps -->
+    <a href="https://www.google.com/maps/place/Kellydepucallpa/@-8.3973925,-74.56813,19z/data=!4m6!3m5!1s0x91a3bd5ba213760b:0xc44c6f36de466b25!8m2!3d-8.3974617!4d-74.5679819!16s%2Fg%2F11s49540fq?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <button class="btn">Ir a Google Maps</button>
+    </a>
+
+</body>
+</html>
