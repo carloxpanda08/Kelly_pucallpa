@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navidad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        nav {
+            background-color: #ff80ab;
+            color: white;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        .categorias {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .categoria {
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            width: 150px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .categoria:hover {
+            transform: scale(1.05);
+        }
+
+        .categoria img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #ff80ab;
+        }
+
+        .categoria h3 {
+            font-size: 1em;
+            margin-top: 10px;
+            color: #4a148c;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="tienda.html">tienda</a></li>
+        </ul>
+    </nav>
+
+    <div class="categorias">
+        <a href="regalos.html" class="categoria">
+            <img src="producto32.jpg" alt="Icono Regalos">
+            <h3>Navidad</h3>
+        </a>
+    </div>
+</body>
+</html>

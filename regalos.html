@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navidad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #ff80ab;
+            color: white;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        .productos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .producto {
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            width: 200px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .producto img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #ff80ab;
+        }
+
+        .producto h3 {
+            font-size: 1em;
+            margin-top: 10px;
+            color: #4a148c;
+        }
+
+        .producto button {
+            background-color: #ff80ab;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+        .producto button:hover {
+            background-color: #ec407a;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="tienda.html">Inicio</a></li>
+            <li><a href="carrito.html">Carrito</a></li>
+        </ul>
+    </nav>
+
+    <div class="productos">
+        <div class="producto">
+            <img src="producto21.jpg" alt="Peluche Capibara">
+            <h3>Peluche Capibara</h3>
+            <button onclick="agregarAlCarrito('Peluche Capibara', 10.50, 'producto21.jpg')">Comprar</button>
+        </div>
+        <div class="producto">
+            <img src="producto15.jpeg" alt="JUGUETE BATIDORA">
+            <h3>JUGUETE BATIDORA</h3>
+            <button onclick="agregarAlCarrito('JUGUETE BATIDORA', 9, 'producto15.jpeg')">Comprar</button>
+        </div>
+        <div class="producto">
+            <img src="producto1.jpg" alt="NUTRIA DORMILONA">
+            <h3>NUTRIA DORMILONA</h3>
+            <button onclick="agregarAlCarrito('NUTRIA DORMILONA', 23, 'producto1.jpg')">Comprar</button>
+        </div>
+        <div class="producto">
+            <img src="producto27.jpg" alt="LUCES NAVIDEÑAS">
+            <h3>LUCES NAVIDEÑAS</h3>
+            <button onclick="agregarAlCarrito('LUCES NAVIDEÑAS', 7, 'producto27.jpg')">Comprar</button>
+        </div>
+        <div class="producto">
+            <img src="producto32.jpg" alt="CASCADAS  DE LUCES LED 3MT">
+            <h3>CASCADAS  DE LUCES LED 3MT</h3>
+            <button onclick="agregarAlCarrito('CASCADAS  DE LUCES LED 3MT', 23, 'producto32.jpg')">Comprar</button>
+        </div>
+        <div class="producto">
+            <img src="producto36.jpg" alt="CASCADA NAVIDEÑA 3 METROS">
+            <h3>CASCADA NAVIDEÑA 3 METROS</h3>
+            <button onclick="agregarAlCarrito('CASCADA NAVIDEÑA 3 METROS', 26, 'producto36.jpg')">Comprar</button>
+        </div>
+        <div class="producto">
+            <img src="producto2.jpg" alt="ÁRBOL PINO VERDE POMPOSO">
+            <h3>ÁRBOL PINO VERDE POMPOSO</h3>
+            <button onclick="agregarAlCarrito('ÁRBOL PINO VERDE POMPOSO', 55, 'producto2.jpg')">Comprar</button>
+        </div>
+        <div class="producto">
+            <img src="producto3.jpg" alt="ÁRBOL PIRÁMIDE-3 LADOS-INCLUYE 1 ESTRELLA-LUCES LED-1METRO con 80 CM">
+            <h3>ÁRBOL PIRÁMIDE-3 LADOS-INCLUYE 1 ESTRELLA-LUCES LED-1METRO con 80 CM</h3>
+            <button onclick="agregarAlCarrito('ÁRBOL PIRÁMIDE-3 LADOS-INCLUYE 1 ESTRELLA-LUCES LED-1METRO con 80 CM', 42, 'producto3.jpg')">Comprar</button>
+        </div>
+    </div>
+
+    <script>
+        function agregarAlCarrito(nombre, precio, imagen) {
+            // Obtener el carrito del localStorage
+            const carrito = JSON.parse(localStorage.getItem("cart")) || [];
+            
+            // Crear el objeto del producto
+            const nuevoProducto = { nombre, precio, imagen };
+
+            // Agregar el producto al carrito
+            carrito.push(nuevoProducto);
+
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem("cart", JSON.stringify(carrito));
+
+            // Confirmar al usuario que el producto fue agregado
+            alert(`${nombre} se ha agregado al carrito.`);
+        }
+    </script>
+</body>
+</html>
