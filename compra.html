@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -107,13 +107,13 @@
             <div class="qr-container">
                 <p>Escanea el código QR para realizar el pago por Yape:</p>
                 <img src="yape_kelly.jpeg" alt="yape-qr">
-                <p>O yapea a estos numeros: 970 554 204 / 953 043 735 </p>
+                <p>O yapea a estos números: 970 554 204 / 953 043 735</p>
             </div>
-            <p>Enviar captura del pago al número del chat(enviar datos). (obligatorio)</p>
+            <p>Enviar captura del pago al número del chat (enviar datos). (obligatorio)</p>
         </div>
 
         <a href="javascript:void(0);" class="btn" id="finalizeBtn">Enviar datos</a>
-        <p id="yape-qr" id="successMessage" class="message">¡Compra registrada! Se enviaron los datos correctamente.</p>
+        <p id="successMessage" class="message">¡Compra registrada! Se enviaron los datos correctamente.</p>
     </div>
 
     <script>
@@ -134,44 +134,54 @@
         }
 
         document.getElementById("finalizeBtn").onclick = function() {
-    const name = document.getElementById("name").value.trim();
-    const pickupDate = document.getElementById("pickup-date").value;
+            const name = document.getElementById("name").value.trim();
+            const pickupDate = document.getElementById("pickup-date").value;
 
-    if (!name || !pickupDate) {
-        alert("Por favor, completa todos los campos.");
-        return;
-    }
+            if (!name || !pickupDate) {
+                alert("Por favor, completa todos los campos.");
+                return;
+            }
 
-    // Procesar productos y datos del comprador
-    let products = cart.map(item => `${item.nombre} - S/ ${item.precio}`).join("%0A");
-    const total = cart.reduce((sum, item) => sum + item.precio, 0).toFixed(2);
+            // Generar un código de compra único
+            const purchaseCode = "CP" + Math.random().toString(36).substring(2, 8).toUpperCase();
 
-    // Mensaje para WhatsApp
-    const message = `Hola, soy ${name}.%0A` +
-                    `He realizado una compra con los siguientes detalles:%0A` +
-                    `Productos:%0A${products}%0A` +
-                    `Total: S/ ${total}%0A` +
-                    `Recogeré el pedido el: ${pickupDate}.`;
+            // Procesar productos y datos del comprador
+            let products = cart.map(item => `${item.nombre} - S/ ${item.precio}`).join("%0A");
+            const total = cart.reduce((sum, item) => sum + item.precio, 0).toFixed(2);
 
-    // URL de WhatsApp
-    const whatsappUrl = `https://wa.me/970554204?text=${message}`;
+            // Mensaje para WhatsApp
+            const message = `Hola, soy ${name}.%0A` +
+                            `He realizado una compra con los siguientes detalles:%0A` +
+                            `Productos:%0A${products}%0A` +
+                            `Total: S/ ${total}%0A` +
+                            `Recogeré el pedido el: ${pickupDate}.%0A` +
+                            `Código de compra: ${purchaseCode} (no compartir).`;
 
-    // Abrir WhatsApp
-    window.open(whatsappUrl, "_blank");
+            // URL de WhatsApp
+            const whatsappUrl = `https://wa.me/970554204?text=${message}`;
 
-    // Guardar información en localStorage (opcional)
-    localStorage.setItem("compraFinalizada", JSON.stringify({
-        nombre: name,
-        productos: products,
-        total: total,
-        fecha: pickupDate
-    }));
+            // Abrir WhatsApp
+            window.open(whatsappUrl, "_blank");
 
-    // Redirigir a la página de confirmación después de 2 segundos
-    setTimeout(() => {
-        window.location.href = "final.html";
-    }, 2000);
-};
+            // Mostrar mensaje de éxito
+            const successMessage = document.getElementById("successMessage");
+            successMessage.style.display = "block";
+            successMessage.innerText = `¡Compra registrada! Tu código es: ${purchaseCode}.`;
+
+            // Guardar información en localStorage (opcional)
+            localStorage.setItem("compraFinalizada", JSON.stringify({
+                nombre: name,
+                productos: products,
+                total: total,
+                fecha: pickupDate,
+                codigoCompra: purchaseCode
+            }));
+
+            // Redirigir a la página de confirmación después de 2 segundos
+            setTimeout(() => {
+                window.location.href = "final.html";
+            }, 2000);
+        };
     </script>
 </body>
 </html>
